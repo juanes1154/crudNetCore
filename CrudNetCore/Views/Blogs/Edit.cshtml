@@ -1,0 +1,59 @@
+﻿@model CrudNetCore.Models.Blog
+@{
+    ViewData["Title"] = "Edit Blog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Edit Blog</h3>
+        </div>
+        
+    </div>
+
+    <div class="row">
+     <div class="col-sm-10">
+         <form method="post" asp-action="Edit">
+
+             <input type="hidden" asp-for="Id"/>
+
+             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+             <div class="form-group">
+                 <label asp-for="Title" class="control-label"></label>
+                 <input asp-for="Title" class="form-control" />
+                 <span asp-validation-for="Title" class="text-danger"></span>
+             </div>
+
+             <div class="form-group">
+                 <label asp-for="Description" class="control-label"></label>
+                 <input asp-for="Description" class="form-control" />
+                 <span asp-validation-for="Description" class="text-danger"></span>
+             </div>
+
+             <div class="form-group">
+                 <label asp-for="DateCreation" class="control-label"></label>
+                 <input asp-for="DateCreation" class="form-control" />
+                 <span asp-validation-for="DateCreation" class="text-danger"></span>
+             </div>
+
+             <div class="form-group">
+                 <label asp-for="Autor" class="control-label"></label>
+                 <input asp-for="Autor" class="form-control" />
+                 <span asp-validation-for="Autor" class="text-danger"></span>
+             </div>
+
+             <div class="form-group">
+                 <input type="submit" value="Edit Blog"  class="btn btn-primary" />
+             </div>
+
+         </form>
+     </div>
+    </div>
+</div>
+
+@section Scripts{ 
+       @{ <partial name="_ValidationScriptsPartial"/> }
+}
+
+
